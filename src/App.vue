@@ -82,11 +82,19 @@
       }
     },
     computed: {
+      first: function () {
+        return this.$store.getters.getFirst
+      },
+      second: function () {
+        return this.$store.getters.getSecond
+      },
       result: function () {
         if (this.$store.getters.getSecond || this.$store.getters.getFirst) {
           return this.$store.getters.getSecond || this.$store.getters.getFirst
         }
-
+        // if (this.$store.getters.getFirst || this.$store.getters.getSecond) {
+        //   return this.$store.getters.getFirst || this.$store.getters.getSecond
+        // }
         return 0
       }
     },
