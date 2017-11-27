@@ -1,5 +1,5 @@
 <template>
-  <el-button type="" @click="onClick">{{value}}</el-button>
+  <el-button size="medium" @click="onClick">{{value}}</el-button>
 </template>
 
 <script>
@@ -22,13 +22,16 @@
         var ops = this.$store.getters.getOps
 
         var value = Number(this.value)
-        if (Number.isInteger(value) && !this.$store.getters.getResult) {
+        if (Number.isInteger(value) && !result) {
           if (!ops) {
             first = first * 10 + value //拼接两个连续的数字
             this.$store.commit('setFirst', first)
+            this.$store.commit('setView', first)
           } else {
             second = second * 10 + value //拼接两个连续的数字
             this.$store.commit('setSecond', second)
+            this.$store.commit('setView', second)
+            console.log(this.$store.getters.getTag)
           }
 
         } else if (!Number.isInteger(value)) { //输入的是运算符
@@ -59,6 +62,7 @@
                   break
               }
               this.$store.commit('setFirst', this.$store.getters.getResult)
+              this.$store.commit('setView', this.$store.getters.getResult)
               this.$store.commit('setSecond', 0)
               break
             default: //按下清除键
@@ -72,3 +76,8 @@
   }
 
 </script>
+
+<style>
+
+
+</style>

@@ -53,11 +53,8 @@
       </el-col>
     </el-row>
     <el-row>
-      <el-col :span="5" :offset="2">
-        <i-button button-type="number" value="0" @show="showValue" />
-      </el-col>
-      <el-col :span="5">
-        <i-button button-type="number" value="." @show="showValue" />
+      <el-col :span="10" :offset="2">
+        <i-button class="zero" button-type="number" value="0" @show="showValue" />
       </el-col>
       <el-col :span="5">
         <i-button button-type="number" value="=" @show="showValue" />
@@ -82,25 +79,16 @@
       }
     },
     computed: {
-      first: function () {
-        return this.$store.getters.getFirst
-      },
-      second: function () {
-        return this.$store.getters.getSecond
-      },
       result: function () {
-        if (this.$store.getters.getSecond || this.$store.getters.getFirst) {
-          return this.$store.getters.getSecond || this.$store.getters.getFirst
-        }
-        // if (this.$store.getters.getFirst || this.$store.getters.getSecond) {
-        //   return this.$store.getters.getFirst || this.$store.getters.getSecond
-        // }
-        return 0
+        return this.$store.getters.getView
       }
     },
     methods: {
       showValue: function (value) {
         return value
+      },
+      isPositive: function (value) {
+        return value === 0 && 1 / value > 0
       }
     },
     components: {
@@ -131,6 +119,11 @@
 
   .el-button {
     width: 56px;
+    height: 56px;
+  }
+
+  .zero {
+    width: 139.3px;
     height: 56px;
   }
 
