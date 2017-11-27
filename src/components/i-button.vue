@@ -24,14 +24,13 @@
         var value = Number(this.value)
         if (Number.isInteger(value) && !result) {
           if (!ops) {
-            first = first * 10 + value //拼接两个连续的数字
+            first = (first * 10 + value) > 99999999999999 ? first : (first * 10 + value) //拼接两个连续的数字
             this.$store.commit('setFirst', first)
             this.$store.commit('setView', first)
           } else {
-            second = second * 10 + value //拼接两个连续的数字
+            second = (second * 10 + value) > 99999999999999 ? second : (second * 10 + value) //拼接两个连续的数字
             this.$store.commit('setSecond', second)
             this.$store.commit('setView', second)
-            console.log(this.$store.getters.getTag)
           }
 
         } else if (!Number.isInteger(value)) { //输入的是运算符

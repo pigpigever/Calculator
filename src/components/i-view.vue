@@ -33,7 +33,24 @@
   .view>p {
     margin: 0;
     overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
     font-size: 24px;
+  }
+
+  @keyframes zoom {
+    0% {
+      transform: scale(.2);
+      opacity: 1;
+    }
+
+    70% {
+      transform: scale(1);
+    }
+
+    100% {
+      opacity: 0;
+    }
   }
 
 </style>
