@@ -70,26 +70,16 @@
   import iButton from './components/i-button'
   import viewer from './components/i-view'
   import store from './store'
+  import {
+    mapGetters
+  } from 'vuex'
   export default {
     name: 'app',
     store,
-    data: function () {
-      return {
-        view: 0
-      }
-    },
     computed: {
-      result: function () {
-        return this.$store.getters.getView
-      }
-    },
-    methods: {
-      showValue: function (value) {
-        return value
-      },
-      isPositive: function (value) {
-        return value === 0 && 1 / value > 0
-      }
+      ...mapGetters({
+        result: 'getView'
+      })
     },
     components: {
       'i-button': iButton,

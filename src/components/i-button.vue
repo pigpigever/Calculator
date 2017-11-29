@@ -13,7 +13,8 @@
        * 判断当前输入的值是否为数字
        * 为数字：1、判断当前有无运算符，无则存入first，有则存入second
        * 为运算符：1、为'+','-','*','/'之一则设置ops为当前值并清空result
-       *          2、为'='则先清空ops，
+       *          2、为'='则先清空ops
+       * 每次按下数字键则调用setView函数，父组件监听其变化，界面显示对应数字                                
        */
       onClick: function () {
         var first = this.$store.getters.getFirst
@@ -77,6 +78,10 @@
 </script>
 
 <style>
-
+  .el-button:focus {
+    color: black;
+    border-color: #d8dce5;
+    background: transparent;
+  }
 
 </style>

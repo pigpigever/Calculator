@@ -7,15 +7,7 @@
 <script>
   export default {
     name: 'view',
-    props: ['viewValue'],
-    computed: {
-      isNumber: function () {
-        var viewValue = Number(this.viewValue)
-        if (Number.isInteger(viewValue)) {
-          return true
-        }
-      }
-    }
+    props: ['viewValue']
   }
 
 </script>
