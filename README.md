@@ -3,7 +3,7 @@
 > Vue.js版计算器
 
 ## demo地址
-[点这里](https://39.108.150.22/Calculator)
+[点这里](http://39.108.150.22/Calculator)
 
 ## 安装运行
 
