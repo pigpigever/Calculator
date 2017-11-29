@@ -1,8 +1,8 @@
 # calculator
 
-> A Vue.js project
+> Vue.js版计算器
 
-## Build Setup
+## 安装运行
 
 ``` bash
 # install dependencies
@@ -17,5 +17,9 @@ npm run build
 # build for production and view the bundle analyzer report
 npm run build --report
 ```
+
+## 运行界面
+
+![运行界面](http://p06atx5il.bkt.clouddn.com/calculator.png)
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
